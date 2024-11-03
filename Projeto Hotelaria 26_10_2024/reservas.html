@@ -32,13 +32,19 @@
                 <input type="number" id="quarto-reserva" required>
             </div>
             <div class="form-group">
-                <label for="preco-diaria">Preço Diário (R$):</label>
-                <input type="number" id="preco-diaria" required>
+                <label for="tipo-quarto">Tipo de Quarto</label>
+                    <select name="tipo-quarto" id="tipo-quarto">
+                        <option value="popular"> Popular (R$39,99)</option>
+                        <option value="premium"> Premium (R$64,99)</option>
+                    </select>
             </div>
-            <button type="submit">Reservar Quarto</button>
+            <div>
+                <p> O preço da sua estadia será: </p>
+            </div>
+            <button type="submit" onclick="mostrar_PrecoEstadia()">Reservar Quarto</button>
             <p id="mensagem-reserva"></p>
         </form>
-        <a href="index.html">Voltar para o menu principal</a>
+        <button><a href="index.html"> Voltar para o menu principal </a></button>
     </main>
     <script src="js/reservas.js"></script> <!-- Link para o arquivo JavaScript -->
 </body>

@@ -43,7 +43,7 @@ function exibirHospedes(filtroId = '', filtroNome = '', ordenacaoId = 'crescente
             
             // Prepara as informações de reservas
             const reservasInfo = reservasDoHospede.map(reserva => 
-                `Quarto: ${reserva.numeroQuarto}, Check-in: ${reserva.dataCheckin}, Check-out: ${reserva.dataCheckout}`
+                `Quarto: ${reserva.numeroQuarto}, Check-in: ${reserva.dataCheckin}, Check-out: ${reserva.dataCheckout}, Preço da estadia: R$${reserva.precoEstadia}`
             ).join('<br>') || 'Nenhuma reserva';
 
             row.innerHTML = `

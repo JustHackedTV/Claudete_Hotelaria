@@ -13,6 +13,34 @@ hospedes.forEach(hospede => {
     selectHospede.appendChild(option);
 });
 
+// Função para calcular o preço da estadia
+function calcularPrecoEstadia() {
+    const dataCheckin = new Date(document.getElementById('data-checkin').value);
+    const dataCheckout = new Date(document.getElementById('data-checkout').value);
+    const tipoQuarto = document.getElementById('tipo-quarto').value;
+
+    if (!dataCheckin || !dataCheckout || dataCheckout <= dataCheckin) {
+        return 'Selecione datas válidas para a reserva';
+    }
+
+    const milissegundosPorDia = 1000 * 60 * 60 * 24;
+    const diasEstadia = Math.floor((dataCheckout - dataCheckin) / milissegundosPorDia);
+    const precoDiaria = tipoQuarto === 'premium' ? 64.99 : 39.99;
+
+    return (diasEstadia * precoDiaria).toFixed(2);
+}
+
+// Atualiza o preço da estadia sempre que datas ou tipo de quarto são modificados
+document.getElementById('data-checkin').addEventListener('change', () => {
+    document.getElementById('mensagem-reserva').textContent = `O preço da estadia será R$ ${calcularPrecoEstadia()}`;
+});
+document.getElementById('data-checkout').addEventListener('change', () => {
+    document.getElementById('mensagem-reserva').textContent = `O preço da estadia será R$ ${calcularPrecoEstadia()}`;
+});
+document.getElementById('tipo-quarto').addEventListener('change', () => {
+    document.getElementById('mensagem-reserva').textContent = `O preço da estadia será R$ ${calcularPrecoEstadia()}`;
+});
+
 // Adiciona um evento para o formulário de reservas
 document.getElementById('form-reservas').addEventListener('submit', (e) => {
     e.preventDefault(); // Previne o comportamento padrão do formulário
@@ -22,7 +50,8 @@ document.getElementById('form-reservas').addEventListener('submit', (e) => {
     const dataCheckin = document.getElementById('data-checkin').value;
     const dataCheckout = document.getElementById('data-checkout').value;
     const quartoReserva = document.getElementById('quarto-reserva').value;
-    const precoDiaria = document.getElementById('preco-diaria').value;
+    const tipoQuarto = document.getElementById('tipo-quarto').value;
+    const precoEstadia = calcularPrecoEstadia();
 
     // Verifica se o quarto já está reservado
     const quartoReservado = reservasExistentes.find(reserva => reserva.numeroQuarto === quartoReserva &&
@@ -45,12 +74,13 @@ document.getElementById('form-reservas').addEventListener('submit', (e) => {
             dataCheckin,
             dataCheckout,
             numeroQuarto: quartoReserva,
-            precoDiaria,
+            tipoQuarto,
+            precoEstadia, // Adiciona o preço da estadia calculado
         };
 
         // Adiciona a nova reserva à lista de reservas
         reservasExistentes.push(novaReserva);
-        document.getElementById('mensagem-reserva').textContent = `Reserva realizada para ${hospede.nome}.`;
+        document.getElementById('mensagem-reserva').textContent = `Reserva realizada para ${hospede.nome}. O preço da estadia será R$ ${precoEstadia}.`;
     } else {
         document.getElementById('mensagem-reserva').textContent = 'Hóspede não encontrado.';
     }
