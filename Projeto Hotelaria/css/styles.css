@@ -1,0 +1,224 @@
+/* Estilo Geral */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Cor suave para o fundo */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Melhora a leitura */
+}
+
+/* Estilo do Header */
+header {
+    background-color: #4A90E2; /* Azul claro para cabeçalho */
+    color: #fff; /* Cor clara para o texto */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Menu de Navegação */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px; /* Aumenta o espaçamento entre os itens */
+}
+
+nav ul li a {
+    color: #fff; /* Cor neutra para o link */
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Efeito de transformação suave */
+}
+
+nav ul li a:hover {
+    background-color: #357ABD; /* Cor suave ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilo do Main */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Seção e Formulários */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff; /* Fundo branco para contraste */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width:fit-content /* Limita o tamanho da seção */
+}
+
+/* Estilo dos Títulos */
+h2 {
+    color: #4A90E2;
+    font-size: 1.8em;
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+}
+
+/* Organização dos Formulários */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px; /* Aumenta o espaçamento entre o rótulo e o input */
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s; /* Transição suave na borda */
+}
+
+.form-group input:focus {
+    border-color: #4A90E2; /* Borda azul ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Estilo dos Botões */
+button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #357ABD;
+    transform: scale(1.05); /* Leve aumento no botão ao passar o mouse */
+}
+
+button:focus {
+    outline: 2px solid #357ABD; /* Contorno azul ao focar */
+}
+
+/* Mensagens de Feedback */
+#mensagem-hospede, #mensagem-reserva {
+    margin-top: 15px;
+    font-size: 1em;
+    color: #D9534F; /* Cor para feedback */
+    text-align: center; /* Centraliza a mensagem */
+}
+
+/* Estilo da Tabela */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse; /* Remove o espaço entre as células */
+    border-radius: 8px; /* Bordas arredondadas para a tabela */
+    overflow: hidden; /* Garante que as bordas arredondadas sejam visíveis */
+}
+
+/* Cabeçalho da Tabela */
+table th {
+    background-color: #4A90E2; /* Cor de fundo do cabeçalho */
+    color: #fff;
+    text-align: left;
+    padding: 16px; /* Aumenta o padding para dar mais espaço nas colunas */
+    font-size: 1.1em; /* Tamanho maior para os títulos */
+    font-weight: bold;
+    border-bottom: 2px solid #ddd; /* Borda inferior mais espessa */
+    width: 15%; /* Ajusta a largura da coluna do cabeçalho */
+}
+
+/* Células da Tabela */
+table td {
+    background-color: #fff;
+    padding: 8px 16px; /* Diminui o padding vertical e aumenta o horizontal */
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Borda sutil entre as linhas */
+    font-size: 1em; /* Tamanho padrão da fonte */
+    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+    height: 40px; /* Controla a altura da linha */
+}
+
+/* Linhas Alternadas */
+table tr:nth-child(even) td {
+    background-color: #f9f9f9; /* Fundo alternado para melhorar a leitura */
+}
+
+/* Efeito de Hover nas Linhas */
+table tr:hover td {
+    background-color: #f1f1f1; /* Cor de fundo mais clara ao passar o mouse */
+}
+
+/* Estilo para os botões dentro da tabela */
+button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
+}
+
+/* Botão Remover Hospede */
+button.btn-remover-hospede {
+    background-color: #D9534F; /* Cor vermelha */
+    color: #fff;
+}
+
+button.btn-remover-hospede:hover {
+    background-color: #C9302C;
+}
+
+/* Botão Remover Reserva */
+button.btn-remover-reserva {
+    background-color: #F0AD4E; /* Cor amarela */
+    color: #fff;
+}
+
+button.btn-remover-reserva:hover {
+    background-color: #EC971F;
+}
+
+/* Botão Ir para o Pagamento */
+button.btn-pagamento {
+    background-color: #5BC0DE; /* Cor azul clara */
+    color: #fff;
+}
+
+button.btn-pagamento:hover {
+    background-color: #31B0D5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    table th, table td {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    table td, table th {
+        text-align: center; /* Centraliza o conteúdo nas células em telas pequenas */
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 0.85em; /* Ajusta o tamanho dos botões em dispositivos móveis */
+    }
+}
