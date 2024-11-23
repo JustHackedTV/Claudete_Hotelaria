@@ -70,35 +70,7 @@ function exibirHospedes(filtroNome = '', ordenacaoId = 'crescente', ordenacaoNom
                 <button class="btn-pagamento" data-documento="${hospede.documento}">Ir para o pagamento</button>
             </td>
         `;
-
-            // Adiciona o evento para o botão de pagamento
-            document.querySelectorAll('.btn-pagamento').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const documento = event.target.getAttribute('data-documento');
-                    window.location.href = `pagamento.html?documento=${documento}`;
-                });
-            });
-
-            // Adiciona o evento para remover o hóspede
-            document.querySelectorAll('.btn-remover-hospede').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    const documento = event.target.getAttribute('data-documento');
-                    removerHospede(documento);
-                });
-            });
-
-            // Adiciona o evento para remover a reserva
-            document.querySelectorAll('.btn-remover-reserva').forEach(button => {
-                button.addEventListener('click', (event) => {
-                    // Captura o número do quarto diretamente do atributo data-numero-quarto
-                    const numeroQuarto = event.target.getAttribute('data-numero-quarto');
-                    
-                    // Chama a função de remoção passando apenas o número do quarto
-                    removerReserva(numeroQuarto);
-                });
-            });
-
-            listaHospedes.appendChild(row);
+        listaHospedes.appendChild(row);  
         });
     } else {
         // Exibe uma mensagem caso não haja hóspedes cadastrados
@@ -106,6 +78,32 @@ function exibirHospedes(filtroNome = '', ordenacaoId = 'crescente', ordenacaoNom
         row.innerHTML = `<td colspan="8" style="text-align: center;">Nenhum hóspede encontrado.</td>`;
         listaHospedes.appendChild(row);
     }
+    // Adiciona o evento para o botão de pagamento
+    document.querySelectorAll('.btn-pagamento').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const documento = event.target.getAttribute('data-documento');
+            window.location.href = `pagamento.html?documento=${documento}`;
+        });
+    });
+
+    // Adiciona o evento para remover o hóspede
+    document.querySelectorAll('.btn-remover-hospede').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const documento = event.target.getAttribute('data-documento');
+            removerHospede(documento);
+        });
+    });
+
+    // Adiciona o evento para remover a reserva
+    document.querySelectorAll('.btn-remover-reserva').forEach(button => {
+        button.addEventListener('click', (event) => {
+            // Captura o número do quarto diretamente do atributo data-numero-quarto
+            const numeroQuarto = event.target.getAttribute('data-numero-quarto');
+            
+            // Chama a função de remoção passando apenas o número do quarto
+            removerReserva(numeroQuarto);
+        });
+    });
 }
 
 
