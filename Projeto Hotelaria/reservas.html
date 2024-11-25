@@ -11,13 +11,13 @@
         <h1>Reservas</h1>
         <nav>
             <ul>
-                <li><a class="nav-button" href="cadastro-hospedes.html">Cadastro de Hóspedes</a></li>
-                <li><a class="nav-button" href="reservas.html">Reservas Online</a></li>
-                <li><a class="nav-button" href="aluguel.html">Aluguel de Quartos</a></li>
-                <li><a class="nav-button" href="servicos.html">Solicitar Serviços</a></li>
-                <li><a class="nav-button" href="frigobar.html">Consumo do Frigobar</a></li>
-                <li><a class="nav-button" href="checkout.html">Check-out</a></li>
-                <li><a class="nav-button" href="lista-hospedes.html">Lista de Hóspedes</a></li>
+                <li><a class="nav-button" href="cadastro-hospedes.html"><span class="nav-box">Cadastro de Hóspedes</span></a></li>
+                <li><a class="nav-button" href="reservas.html"><span class="nav-box">Reservas Online</span></a></li>
+                <li><a class="nav-button" href="aluguel.html"><span class="nav-box">Aluguel de Quartos</span></a></li>
+                <li><a class="nav-button" href="servicos.html"><span class="nav-box">Solicitar Serviços</span></a></li>
+                <li><a class="nav-button" href="frigobar.html"><span class="nav-box">Consumo do Frigobar</span></a></li>
+                <li><a class="nav-button" href="checkout.html"><span class="nav-box">Check-out</span></a></li>
+                <li><a class="nav-button" href="lista-hospedes.html"><span class="nav-box">Lista de Hóspedes</span></a></li>
             </ul>
         </nav>
     </header>
@@ -52,10 +52,12 @@
             <div>
                 <p> O preço da sua estadia será: </p>
             </div>
-            <button type="submit" onclick="mostrar_PrecoEstadia()">Reservar Quarto</button>
+            <div class="button-container">
+            <button type="submit" onclick="mostrar_PrecoEstadia()">Reservar Quarto</button></div>
             <p id="mensagem-reserva"></p>
         </form>
-        <button><a href="index.html"> Voltar para o menu principal </a></button>
+        <div class="button-container">
+        <button type="button" onclick="window.location.href='index.html'">Voltar para o menu principal</button>
     </main>
     <script src="js/reservas.js"></script> <!-- Link para o arquivo JavaScript -->
 </body>

@@ -8,25 +8,49 @@
 </head>
 <body>
     <header>
-        <h1>Hotel Infinito - Sistema de Gerenciamento</h1>
-        <nav>
+        <h1>Reservas - Hotel Infinito</h1>
+        <nav aria-label="Menu principal">
             <ul>
-                <li><a class="nav-button" href="cadastro-hospedes.html">Cadastro de Hóspedes</a></li>
-                <li><a class="nav-button" href="reservas.html">Reservas Online</a></li>
-                <li><a class="nav-button" href="aluguel.html">Aluguel de Quartos</a></li>
-                <li><a class="nav-button" href="servicos.html">Solicitar Serviços</a></li>
-                <li><a class="nav-button" href="frigobar.html">Consumo do Frigobar</a></li>
-                <li><a class="nav-button" href="checkout.html">Check-out</a></li>
-                <li><a class="nav-button" href="lista-hospedes.html">Lista de Hóspedes</a></li>
-                <li><a class="nav-button" href="historico.html">Historico</a></li>
+                <li><a class="nav-button" href="cadastro-hospedes.html"><span class="nav-box">Cadastro de Hóspedes</span></a></li>
+                <li><a class="nav-button" href="reservas.html"><span class="nav-box">Reservas Online</span></a></li>
+                <li><a class="nav-button" href="aluguel.html"><span class="nav-box">Aluguel de Quartos</span></a></li>
+                <li><a class="nav-button" href="servicos.html"><span class="nav-box">Solicitar Serviços</span></a></li>
+                <li><a class="nav-button" href="frigobar.html"><span class="nav-box">Consumo do Frigobar</span></a></li>
+                <li><a class="nav-button" href="checkout.html"><span class="nav-box">Check-out</span></a></li>
+                <li><a class="nav-button" href="lista-hospedes.html"><span class="nav-box">Lista de Hóspedes</span></a></li>
             </ul>
         </nav>
     </header>
+    
     <main class="welcome-section">
-        <h2>Bem-vindo ao Hotel Infinito</h2>
-        <p class="intro-text">
-            Aqui, você pode gerenciar de forma eficiente todas as operações do hotel. Selecione uma das opções acima para começar a usar nosso sistema.
-        </p>
+        <section class="hotel-info">
+            <h2>Bem-vindo ao Hotel Infinito</h2>
+            <p class="intro-text">
+                O Hotel Infinito oferece uma experiência única para seus hóspedes, proporcionando conforto e praticidade. Nosso sistema de gerenciamento facilita a organização de reservas, aluguéis de quartos, solicitações de serviços e muito mais.
+            </p>
+        </section>
+        
+        <!-- Seção de Serviços do Hotel -->
+        <section class="services-section">
+            <h2>Nossos Serviços</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="images/servico1.jpg" alt="Quarto de Hotel" class="service-image">
+                    <h3>Aluguel de Quartos</h3>
+                    <p>Oferecemos uma variedade de quartos para atender diferentes necessidades e orçamentos.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/servico2.jpg" alt="Frigobar" class="service-image">
+                    <h3>Consumo do Frigobar</h3>
+                    <p>Os hóspedes podem gerenciar o consumo do frigobar diretamente pelo nosso sistema.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/servico3.jpg" alt="Serviços Adicionais" class="service-image">
+                    <h3>Serviços Adicionais</h3>
+                    <p>Solicite serviços extras, como limpeza e transporte, diretamente no sistema.</p>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>

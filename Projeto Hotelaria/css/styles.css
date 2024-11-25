@@ -27,20 +27,37 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 20px; /* Aumenta o espaçamento entre os itens */
+    margin: 0 10px; /* Espaçamento entre os itens */
 }
 
+/* Estilo para os Links dentro das Caixinhas */
 nav ul li a {
-    color: #fff; /* Cor neutra para o link */
+    color: #fff; /* Cor do texto */
     text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s; /* Efeito de transformação suave */
 }
 
-nav ul li a:hover {
-    background-color: #357ABD; /* Cor suave ao passar o mouse */
+.nav-box {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #357ABD; /* Cor do fundo das caixinhas */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */
+}
+
+.nav-box:hover {
+    background-color: #285a8a; /* Cor ao passar o mouse */
     transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+/* Responsividade para Navegação */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+    }
+
+    .nav-box {
+        margin-bottom: 10px; /* Adiciona espaçamento entre os itens em telas pequenas */
+    }
 }
 
 /* Estilo do Main */
@@ -57,7 +74,7 @@ section {
     background-color: #fff; /* Fundo branco para contraste */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    max-width:fit-content /* Limita o tamanho da seção */
+    max-width: fit-content; /* Limita o tamanho da seção */
 }
 
 /* Estilo dos Títulos */
@@ -94,86 +111,42 @@ h2 {
 
 /* Estilo dos Botões */
 button {
-    background-color: #4A90E2;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.2s;
+    background-color: #4A90E2; /* Azul padrão */
+    color: white; /* Texto branco */
+    padding: 12px; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    font-size: 1em; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */
+    width: auto; /* Ajusta a largura ao conteúdo */
+    text-align: center; /* Centraliza o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin: 5px; /* Adiciona um pequeno espaçamento entre os botões */
 }
 
+/* Organiza os botões em um contêiner flexível */
+.button-container {
+    display: flex; /* Utiliza flexbox para organizar os botões */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Alinha os botões verticalmente, caso necessário */
+    gap: 15px; /* Adiciona espaçamento entre os botões */
+    flex-wrap: wrap; /* Permite que os botões se movam para a linha seguinte se necessário */
+    margin-top: 20px; /* Espaçamento acima do contêiner de botões */
+}
+
+/* Efeito de Hover nos Botões */
 button:hover {
     background-color: #357ABD;
     transform: scale(1.05); /* Leve aumento no botão ao passar o mouse */
 }
 
+/* Efeito de Foco nos Botões */
 button:focus {
     outline: 2px solid #357ABD; /* Contorno azul ao focar */
 }
 
-/* Mensagens de Feedback */
-#mensagem-hospede, #mensagem-reserva {
-    margin-top: 15px;
-    font-size: 1em;
-    color: #D9534F; /* Cor para feedback */
-    text-align: center; /* Centraliza a mensagem */
-}
-
-/* Estilo da Tabela */
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse; /* Remove o espaço entre as células */
-    border-radius: 8px; /* Bordas arredondadas para a tabela */
-    overflow: hidden; /* Garante que as bordas arredondadas sejam visíveis */
-}
-
-/* Cabeçalho da Tabela */
-table th {
-    background-color: #4A90E2; /* Cor de fundo do cabeçalho */
-    color: #fff;
-    text-align: left;
-    padding: 16px; /* Aumenta o padding para dar mais espaço nas colunas */
-    font-size: 1.1em; /* Tamanho maior para os títulos */
-    font-weight: bold;
-    border-bottom: 2px solid #ddd; /* Borda inferior mais espessa */
-    width: 15%; /* Ajusta a largura da coluna do cabeçalho */
-}
-
-/* Células da Tabela */
-table td {
-    background-color: #fff;
-    padding: 8px 16px; /* Diminui o padding vertical e aumenta o horizontal */
-    text-align: left;
-    border-bottom: 1px solid #ddd; /* Borda sutil entre as linhas */
-    font-size: 1em; /* Tamanho padrão da fonte */
-    transition: background-color 0.3s ease; /* Transição suave para o fundo */
-    height: 40px; /* Controla a altura da linha */
-}
-
-/* Linhas Alternadas */
-table tr:nth-child(even) td {
-    background-color: #f9f9f9; /* Fundo alternado para melhorar a leitura */
-}
-
-/* Efeito de Hover nas Linhas */
-table tr:hover td {
-    background-color: #f1f1f1; /* Cor de fundo mais clara ao passar o mouse */
-}
-
-/* Estilo para os botões dentro da tabela */
-button {
-    padding: 6px 12px;
-    font-size: 0.9em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s; /* Efeito de transição */
-}
-
-/* Botão Remover Hospede */
+/* Botão de Remover Hospede */
 button.btn-remover-hospede {
     background-color: #D9534F; /* Cor vermelha */
     color: #fff;
@@ -183,7 +156,7 @@ button.btn-remover-hospede:hover {
     background-color: #C9302C;
 }
 
-/* Botão Remover Reserva */
+/* Botão de Remover Reserva */
 button.btn-remover-reserva {
     background-color: #F0AD4E; /* Cor amarela */
     color: #fff;
@@ -193,7 +166,7 @@ button.btn-remover-reserva:hover {
     background-color: #EC971F;
 }
 
-/* Botão Ir para o Pagamento */
+/* Botão de Ir para o Pagamento */
 button.btn-pagamento {
     background-color: #5BC0DE; /* Cor azul clara */
     color: #fff;
@@ -201,6 +174,32 @@ button.btn-pagamento {
 
 button.btn-pagamento:hover {
     background-color: #31B0D5;
+}
+
+/* Botão de Navegação */
+button.btn-navegacao {
+    background-color: #4A90E2; /* Azul padrão */
+    color: white; /* Texto branco */
+    padding: 12px; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    font-size: 1em; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */
+    width: auto; /* Ajusta a largura ao conteúdo */
+    text-align: center; /* Centraliza o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Efeito ao Passar o Mouse no Botão de Navegação */
+button.btn-navegacao:hover {
+    background-color: #357ABD; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no botão */
+}
+
+/* Efeito ao Focar no Botão de Navegação */
+button.btn-navegacao:focus {
+    outline: 2px solid #357ABD; /* Contorno azul ao focar */
 }
 
 /* Responsividade */
@@ -221,12 +220,98 @@ button.btn-pagamento:hover {
     button {
         font-size: 0.85em; /* Ajusta o tamanho dos botões em dispositivos móveis */
     }
+
+    /* Ajusta os botões de navegação em telas pequenas */
+    button.btn-navegacao {
+        font-size: 0.9em; /* Ajusta o tamanho da fonte em telas menores */
+        padding: 8px 16px; /* Reduz o espaçamento */
+    }
 }
 
-.listaHospedes{
-    display: none;
-    border: 1px solid #ccc;
-    padding: 10px; 
-    max-height: 150px;
-    overflow-y: auto;
+/* Estilo para Botões de Navegação */
+button.btn-navegacao {
+    background-color: #4A90E2; /* Azul padrão */
+    color: white; /* Texto branco */
+    padding: 12px; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    font-size: 1em; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */
+    width: auto; /* Ajusta a largura ao conteúdo */
+    text-align: center; /* Centraliza o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
+
+/* Estilo para Botões de Navegação */
+button.btn-navegacao:hover {
+    background-color: #357ABD; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no botão */
+}
+
+button.btn-navegacao:focus {
+    outline: 2px solid #357ABD; /* Contorno azul ao focar */
+}
+
+/* Estilos para a Seção de Serviços */
+.services-section {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.services-section h2 {
+    color: #4A90E2;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Organiza os Cards dos Serviços */
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    color: #357ABD;
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.service-image {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade para a Seção de Serviços */
+@media (max-width: 768px) {
+    .service-card {
+        width: 100%; /* Faz os cards ocuparem a largura inteira */
+    }
+
+    .service-cards {
+        flex-direction: column; /* Organiza os cards verticalmente */
+    }
+}
+
