@@ -9,13 +9,7 @@
 <body>
     <header>
         <h1>Lista de Hóspedes Cadastrados</h1>
-        <nav>
-            <ul>
-                <li><a href="cadastro-hospedes.html">Cadastro de Hóspedes</a></li>
-                <li><a href="reservas.html">Reservas Online</a></li>
-                <li><a href="index.html">Página Inicial</a></li>
-            </ul>
-        </nav>
+        <div id="navbar"></div>
     </header>
 
     <main>
@@ -48,29 +42,32 @@
             
 
             <!-- Tabela de Hóspedes -->
-            <table id="tabela-hospedes">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Documento</th>
-                        <th>Endereço</th>
-                        <th>Contato</th>
-                        <th>Reservas</th>
-                        <th>Serviços adicionais</th>
-                        <th>Total a pagar</th>
-                        <th>Remover hóspede</th>
-                        <th>Remover reservas</th>
-                        <th>Ir para o pagamento</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-hospedes">
-                    <!-- Os dados dos hóspedes serão carregados aqui -->
-                </tbody>
-            </table>
+            <div id="esconder">
+                <table id="tabela-hospedes">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Documento</th>
+                            <th>Endereço</th>
+                            <th>Contato</th>
+                            <th>Reservas</th>
+                            <th>Serviços adicionais</th>
+                            <th>Total a pagar</th>
+                            <th>Remover hóspede</th>
+                            <th>Remover reservas</th>
+                            <th>Ir para o pagamento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-hospedes">
+                        <!-- Os dados dos hóspedes serão carregados aqui -->
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
     <script src="js/listaHospedes.js" defer></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

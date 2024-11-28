@@ -9,17 +9,7 @@
 <body>
     <header>
         <h1>Solicitar Serviços</h1>
-        <nav>
-            <ul>
-                <li><a class="nav-button" href="cadastro-hospedes.html"><span class="nav-box">Cadastro de Hóspedes</span></a></li>
-                <li><a class="nav-button" href="reservas.html"><span class="nav-box">Reservas Online</span></a></li>
-                <li><a class="nav-button" href="aluguel.html"><span class="nav-box">Aluguel de Quartos</span></a></li>
-                <li><a class="nav-button" href="servicos.html"><span class="nav-box">Solicitar Serviços</span></a></li>
-                <li><a class="nav-button" href="frigobar.html"><span class="nav-box">Consumo do Frigobar</span></a></li>
-                <li><a class="nav-button" href="checkout.html"><span class="nav-box">Check-out</span></a></li>
-                <li><a class="nav-button" href="lista-hospedes.html"><span class="nav-box">Lista de Hóspedes</span></a></li>
-            </ul>
-        </nav>
+        <div id="navbar"></div>
     </header>
     <main>
         <form id="form-servicos">
@@ -68,18 +58,23 @@
                     <option value="iogurte">Iogurte (R$ 5,00)</option>
                     <option value="sanduiche">Sanduíche (R$ 12,00)</option>
                     <option value="agua_sabores">Água Saborizada (R$ 6,00)</option>
-                </select><br>
+                </select>
                 <button type="button" id="add-frigobar">Adicionar ao Pedido</button>
                 <ul id="itens-frigobar">
                     <!-- Itens do frigobar adicionados serão listados aqui -->
                 </ul>
             </div>
-
-            <button type="submit">Solicitar Serviço</button>
-            <p id="mensagem-servico"></p>
+            
+            <div class="button-container">
+                <button type="submit">Solicitar Serviço</button>
+                <p id="mensagem-servico" class="centralizar"></p>
+            </div>
         </form>
-        <a href="index.html">Voltar para o menu principal</a>
+        <div class="button-container">
+            <button type="button" onclick="window.location.href='index.html'">Voltar para o menu principal</button>
+        </div>
     </main>
     <script src="js/servicos.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

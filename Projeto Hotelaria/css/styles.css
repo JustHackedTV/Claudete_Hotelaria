@@ -8,6 +8,21 @@ body {
     line-height: 1.6; /* Melhora a leitura */
 }
 
+a:link {
+    text-decoration: none; /* Sem sublinhado, opcional */
+}
+
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: darkblue; /* Cor ao passar o mouse */
+}
+a:active {
+    color: red; /* Cor ao clicar */
+}
+
+
 /* Estilo do Header */
 header {
     background-color: #4A90E2; /* Azul claro para cabeçalho */
@@ -79,7 +94,7 @@ section {
 
 /* Estilo dos Títulos */
 h2 {
-    color: #4A90E2;
+    color: #0b4e9b;
     font-size: 1.8em;
     margin-bottom: 15px; /* Espaçamento abaixo do título */
 }
@@ -146,6 +161,13 @@ button:focus {
     outline: 2px solid #357ABD; /* Contorno azul ao focar */
 }
 
+.centralizar
+{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+}
 /* Botão de Remover Hospede */
 button.btn-remover-hospede {
     background-color: #D9534F; /* Cor vermelha */

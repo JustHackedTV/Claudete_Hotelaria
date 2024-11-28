@@ -31,6 +31,8 @@ function exibirHospedes(filtroNome = '', ordenacaoId = 'crescente', ordenacaoNom
 
     // Exibe os hóspedes filtrados
     if (filtrados.length > 0) {
+        let div = document.getElementById('esconder');
+        div.style.display = 'block';
         filtrados.forEach((hospede, index) => {
             const row = document.createElement('tr');
 
@@ -73,6 +75,8 @@ function exibirHospedes(filtroNome = '', ordenacaoId = 'crescente', ordenacaoNom
         listaHospedes.appendChild(row);  
         });
     } else {
+        let div = document.getElementById('esconder');
+        div.style.display = 'none';
         // Exibe uma mensagem caso não haja hóspedes cadastrados
         const row = document.createElement('tr');
         row.innerHTML = `<td colspan="8" style="text-align: center;">Nenhum hóspede encontrado.</td>`;
