@@ -1,4 +1,5 @@
 // Script para carregar o conteúdo do navbar
+
 fetch('navbar.html')
   .then(response => {
     if (!response.ok) {
