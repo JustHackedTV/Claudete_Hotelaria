@@ -1,6 +1,6 @@
-// Recupera os dados dos hóspedes e reservas do localStorage
+// Recupera os dados dos hóspedes do localStorage
 let hospedes = JSON.parse(localStorage.getItem('hospedes')) || [];
-let reservasExistentes = JSON.parse(localStorage.getItem('reservas')) || [];
+let reservasExistentes = JSON.parse(localStorage.getItem('reservas')) || []; // Recupera reservas existentes
 
 // Seleciona o elemento de seleção para hóspedes
 const selectHospede = document.getElementById('hospede-reserva');
@@ -68,9 +68,8 @@ document.getElementById('form-reservas').addEventListener('submit', (e) => {
 
     // Atualiza ou adiciona a reserva do hóspede
     if (hospede) {
-        // Cria um objeto de reserva com um ID único
+        // Cria um objeto de reserva
         const novaReserva = {
-            id: Date.now(), // Gera um ID único com base no timestamp
             documentoHospede: hospedeSelecionado,
             dataCheckin,
             dataCheckout,
@@ -82,11 +81,6 @@ document.getElementById('form-reservas').addEventListener('submit', (e) => {
         // Adiciona a nova reserva à lista de reservas
         reservasExistentes.push(novaReserva);
         document.getElementById('mensagem-reserva').textContent = `Reserva realizada para ${hospede.nome}. O preço da estadia será R$ ${precoEstadia}.`;
-
-        // Atualiza o histórico de reservas
-        let historicoReservas = JSON.parse(localStorage.getItem('historicoReservas')) || [];
-        historicoReservas.push(novaReserva); // Adiciona a reserva ao histórico
-        localStorage.setItem('historicoReservas', JSON.stringify(historicoReservas)); // Atualiza o localStorage
     } else {
         document.getElementById('mensagem-reserva').textContent = 'Hóspede não encontrado.';
     }
@@ -95,25 +89,3 @@ document.getElementById('form-reservas').addEventListener('submit', (e) => {
     localStorage.setItem('reservas', JSON.stringify(reservasExistentes));
     localStorage.setItem('hospedes', JSON.stringify(hospedes));
 });
-
-// Função para remover uma reserva
-function removerReserva(reservaId) {
-    // Encontra o índice da reserva a ser removida
-    const reservaIndex = reservasExistentes.findIndex(reserva => reserva.id === reservaId);
-
-    if (reservaIndex !== -1) {
-        if (confirm('Deseja realmente remover esta reserva?')) {
-            reservasExistentes.splice(reservaIndex, 1);
-            localStorage.setItem('reservas', JSON.stringify(reservasExistentes));
-
-            // Atualiza o histórico de reservas
-            let historicoReservas = JSON.parse(localStorage.getItem('historicoReservas')) || [];
-            historicoReservas = historicoReservas.filter(reserva => reserva.id !== reservaId); // Remove do histórico
-            localStorage.setItem('historicoReservas', JSON.stringify(historicoReservas)); // Atualiza o histórico no localStorage
-
-            alert('Reserva removida com sucesso.');
-        }
-    } else {
-        alert('Erro: Reserva não encontrada.');
-    }
-}
