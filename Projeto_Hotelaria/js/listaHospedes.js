@@ -1,8 +1,7 @@
 // Recupera os dados dos hóspedes e reservas do localStorage
 let hospedes = JSON.parse(localStorage.getItem('hospedes')) || [];
-let reservas = JSON.parse(localStorage.getItem('reservas')) || [];
 let frigobar = JSON.parse(localStorage.getItem('frigobar')) || [];
-
+let reservas = JSON.parse(localStorage.getItem('reservas')) || [];
 
 // Seleciona o elemento tbody para inserir as linhas dos hóspedes
 const listaHospedes = document.getElementById('lista-hospedes');
@@ -122,7 +121,7 @@ function removerHospede(documento) {
             hospedes.splice(index, 1);
             frigobar.splice(index, 1)
             localStorage.setItem('hospedes', JSON.stringify(hospedes));
-            localStorage.setItem('frigobar', JSON.stringify(frigobar));
+            localStorage.setItem('hospedes', JSON.stringify(frigobar));
             alert('Hóspede removido com sucesso.');
             exibirHospedes();
         }
@@ -178,10 +177,8 @@ document.getElementById('btn-limpar-tudo').addEventListener('click', () => {
     if (confirm("Deseja realmente limpar todos os dados (hóspedes e reservas)?")) {
         localStorage.removeItem('hospedes');
         localStorage.removeItem('reservas');
-        localStorage.removeItem('frigobar');
         hospedes = [];
         reservas = [];
-        frigobar = [];
         exibirHospedes();
         alert('Todos os dados foram apagados!');
     }

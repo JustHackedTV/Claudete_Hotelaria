@@ -1,5 +1,10 @@
 let hospedes = JSON.parse(localStorage.getItem('hospedes')) || []; //Pega os hóspedes do localStorage
+let frigobar = JSON.parse(localStorage.getItem('frigobar')) || []; //Pega os "frigobares" do localStorage
 
+const novoFrigo = {
+    items: {},
+    precoTotal: 0
+}
 
 function validarDados(nome, documento, endereco, contato) { //Verifica se todos os campos estão preenchidos. 
     return nome && documento && endereco && contato; //No caso, se um campo estiver vazio, a função retornará "False".
@@ -7,7 +12,9 @@ function validarDados(nome, documento, endereco, contato) { //Verifica se todos 
 
 function adicionarHospede(nome, documento, endereco, contato) { //Adiciona um novo hóspede ao localStorage
     hospedes.push({ nome, documento, endereco, contato }); //Envia o hóspede para o final do array hospedes, inicializado na primeira linha
+    frigobar.push(novoFrigo)
     localStorage.setItem('hospedes', JSON.stringify(hospedes)); //Manda o array para o localStorage
+    localStorage.setItem('frigobar', JSON.stringify(frigobar)); //Manda o frigobar dos crias para o localStorage
     return 'Hóspede cadastrado com sucesso.';
 }
 

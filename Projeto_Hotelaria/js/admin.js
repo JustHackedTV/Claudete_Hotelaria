@@ -16,10 +16,9 @@ botaoAdicionarTeste.addEventListener('click', () => {
         contato: `99999999${hospedes.length + 1}`
     };
 
-
     const novoFrigo = {
-    items: {},
-    precoTotal: 0
+        items: {},
+        precoTotal: 0
     }
 
     frigobar.push(novoFrigo);

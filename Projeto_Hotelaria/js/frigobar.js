@@ -1,5 +1,5 @@
 let hospedes = JSON.parse(localStorage.getItem('hospedes')) || [];
-let frigobar = JSON.parse(localStorage.getItem('frigobar')) || [];
+let frigobar = JSON.parse(localStorage.getItem('frigobar')) || []; // Pega as informações do frigobar
 
 const selectHospede = document.getElementById('listaHospedes');
 
@@ -18,6 +18,7 @@ document.getElementById('form-frigobar').addEventListener('submit', (event) => {
     const quantidade = document.getElementById('quantidade-frigobar').value
     let valor_final = calcularPrecoFinalFrigobar(itemConsumido,quantidade)
     document.getElementById('mensagem-frigobar').innerText = `Registro de consumo: ${quantidade} ${itemConsumido}(s) para ${hospedeSelecionado}. Conta: R$${valor_final.toFixed(2)}`  
+    // -------------------------- GAMBIARA BRABA ABAIXO --------------------------
     if (frigobar[selectHospede.selectedIndex].items[itemConsumido] === undefined) {
         frigobar[selectHospede.selectedIndex].items[itemConsumido] = parseInt(quantidade)
     } else {
